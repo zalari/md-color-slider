@@ -86,7 +86,6 @@ angular
 
                         ngModel.$render = function () {
                             _setColorRGB(_hexToRgb(ngModel.$viewValue));
-                            _setInitials();
                         };
                     };
 
