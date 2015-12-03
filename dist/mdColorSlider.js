@@ -1,3 +1,4 @@
+;(function(angular) {
 'use strict';
 
 angular
@@ -93,3 +94,6 @@ angular
             }
         }
     }]);
+
+angular.module("mdColorSlider").run(["$templateCache", function($templateCache) {$templateCache.put("mdColorSlider.view.html","<div class=\"color-slider-handle\" ng-click=\"toggle()\" ng-style=\"{\'background-color\': model}\"></div>\n\n<md-card layout-padding\n         ng-show=\"showCard\"\n         ng-form=\"rgb\"\n         class=\"ng-hide\">\n    <md-slider min=\"0\" max=\"255\" ng-model=\"color.r\" ng-change=\"change()\" aria-label=\"red\"></md-slider>\n    <md-slider min=\"0\" max=\"255\" ng-model=\"color.g\" ng-change=\"change()\" aria-label=\"green\"></md-slider>\n    <md-slider min=\"0\" max=\"255\" ng-model=\"color.b\" ng-change=\"change()\" aria-label=\"blue\"></md-slider>\n    <md-button type=\"button\" class=\"md-raised md-accent md-hue-1\" ng-click=\"cancel()\">Abbrechen</md-button>\n    <md-button type=\"button\" class=\"md-raised md-primary\" ng-click=\"accept()\">Übernehmen</md-button>\n</md-card>\n");}]);
+})(angular);
