@@ -4,12 +4,15 @@ No jQuery or TinyColor dependencies.
 
 ![preview](#)
 
+## Demo
+(Plunker)[http://plnkr.co/edit/sqTnvY?p=preview]
+
 ## Install
-### NPM
+<!--### NPM
 Install `md-color-slider`.
 ```bash
 npm install md-color-slider
-```
+```-->
 
 <!--### Bower:
 ```bash
