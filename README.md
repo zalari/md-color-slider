@@ -11,10 +11,10 @@ Install `md-color-slider`.
 npm install md-color-slider
 ```
 
-### Bower:
+<!--### Bower:
 ```bash
 bower install md-color-slider -S
-```
+```-->
 
 ## Usage
 Include the stylesheet:
@@ -34,10 +34,12 @@ angular.module('myApp', ['ngMaterial','ngAnimate', 'mdColorSlider']);
 
 Place the directive anywhere inside a ```md-input-container```:
 ````html
-<md-input-container>
+<md-input-container class="md-color-slider-float">
     <md-color-slider ng-model="[your model]"></md-color-slider>
 </md-input-container>
 ````
+Be sure to provide the css class ```md-color-slider-float``` or even ```md-icon-float``` to the ```md-input-container``` wrapper.
+
 You can provide an classic input too:
 ````html
 <md-input-container>
