@@ -2,7 +2,7 @@
 Simple Material design color slider for [AngularJS](https://github.com/angular/angular.js) using [Material Design for AngularJS](https://github.com/angular/material/).
 No jQuery or TinyColor dependencies.
 
-![preview](#)
+![preview](https://raw.githubusercontent.com/zalari/md-color-slider/master/md-color-slider.png)
 
 ## Demo
 [Plunker](http://run.plnkr.co/UKGb9g2xz4vRiAiJ/)
