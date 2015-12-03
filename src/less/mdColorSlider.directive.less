@@ -1,0 +1,74 @@
+md-input-container {
+    & > md-color-slider {
+        position: absolute;
+        top: 5px;
+        left: 2px;
+        display: inline-block;
+        margin: auto;
+        vertical-align: middle;
+
+        .color-slider-handle {
+            display: block;
+            height: 24px;
+            width: 24px;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            cursor: pointer;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        md-card {
+            position: absolute;
+            top: 30px;
+            left: -14px;
+            display: block;
+            min-width: 265px;
+            opacity: 1;
+            z-index: 9999;
+            transition: top ease .3s, opacity ease .3s;
+
+            &.ng-hide {
+                top: 22px;
+                opacity: 0;
+            }
+
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                display: block;
+                z-index: -1;
+            }
+
+            &:before {
+                top: -6px;
+                left: 12px;
+                width: 13px;
+                height: 13px;
+                background-color: #fff;
+                transform: rotate(45deg);
+                box-shadow: 0px 0 1px 0px rgba(0, 0, 0, 0.2);
+            }
+
+            &:after {
+                top: 0;
+                left: 7px;
+                width: 23px;
+                height: 12px;
+                background-color: #fff;
+            }
+        }
+    }
+
+    & + input {
+        margin-left: 36px;
+    }
+
+    &.md-icon-float > md-color-slider,
+    &.md-color-slider-float > md-color-slider {
+        top: 28px;
+        left: 5px;
+    }
+}
