@@ -14,10 +14,10 @@ Install `md-color-slider`.
 npm install md-color-slider
 ```-->
 
-<!--### Bower:
+### Bower:
 ```bash
 bower install md-color-slider -S
-```-->
+```
 
 ## Usage
 Include the stylesheet:
