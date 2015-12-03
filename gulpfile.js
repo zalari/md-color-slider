@@ -66,7 +66,7 @@ gulp.task('js', function(done) {
         //.pipe(sourcemaps.init())
         .pipe(concat(moduleName + '.js'))
 		//.pipe(sourcemaps.write('.'))
-		.pipe(closure(['angular', 'window', 'tinycolor']))
+		.pipe(closure(['angular']))
 		.pipe(ngAnnotate())
 
 		.pipe(gulp.dest(paths.dist))
