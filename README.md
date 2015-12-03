@@ -5,7 +5,7 @@ No jQuery or TinyColor dependencies.
 ![preview](#)
 
 ## Demo
-(Plunker)[http://run.plnkr.co/UKGb9g2xz4vRiAiJ/]
+[Plunker](http://run.plnkr.co/UKGb9g2xz4vRiAiJ/)
 
 ## Install
 <!--### NPM
