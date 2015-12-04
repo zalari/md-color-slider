@@ -20,7 +20,8 @@ angular
                         return '#' + _componentToHex(r) + _componentToHex(g) + _componentToHex(b);
                     },
                     _hexToRgb = function (hex) {
-                        var short = hex.length == 4,
+                        var hex = hex || '#fff',
+                            short = hex.length == 4,
                             result = short
                                 ? /^#?([a-f\d]{1})([a-f\d]{1})([a-f\d]{1})$/i.exec(hex)
                                 : /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -30,30 +31,30 @@ angular
                             b: parseInt(short ? result[3] + '' + result[3] : result[3], 16)
                         } : null;
                     },
-                    _setInitials = function () {
-                        scope.ColorInitialHex = angular.copy(scope.model);
-                        scope.ColorInitialRGB = _hexToRgb(scope.model);
-                    },
-                    _resetInitials = function () {
-                        scope.model = scope.ColorInitialHex;
-                        scope.ColorInitialRGB = _hexToRgb(scope.model);
-                    },
                     _setColorHEX = function (color) {
+                        if (!color) return;
                         scope.model = _rgbToHex(
-                            color.r,
-                            color.g,
-                            color.b
+                            color.r || 255,
+                            color.g || 255,
+                            color.b || 255
                         );
                     },
                     _setColorRGB = function (color) {
+                        // do not return to set an initial slider value
+                        var color = color || {r: 255, g: 255, b: 255};
                         scope.color = {
-                            r: color.r,
-                            g: color.g,
-                            b: color.b
+                            r: color.r || 255,
+                            g: color.g || 255,
+                            b: color.b || 255
                         };
                     },
                     _change = function () {
+                        if (!scope.color) return;
                         _setColorHEX(scope.color);
+                    },
+                    _render = function () {
+                        if (!ngModel.$viewValue) return;
+                        _setColorRGB(_hexToRgb(ngModel.$viewValue));
                     },
                     _open = function () {
                         scope.showCard = true;
@@ -73,6 +74,16 @@ angular
                         _setColorRGB(scope.ColorInitialRGB);
                         $timeout(_close, 250);
                     },
+                    _setInitials = function () {
+                        if (!scope.model) return;
+                        scope.ColorInitialHex = angular.copy(scope.model);
+                        scope.ColorInitialRGB = _hexToRgb(scope.model);
+                    },
+                    _resetInitials = function () {
+                        if (!scope.model) return;
+                        scope.model = scope.ColorInitialHex;
+                        scope.ColorInitialRGB = _hexToRgb(scope.model);
+                    },
                     _init = function () {
                         _setInitials();
                         _setColorRGB(scope.ColorInitialRGB);
@@ -84,9 +95,7 @@ angular
                         scope.accept = _accept;
                         scope.cancel = _cancel;
 
-                        ngModel.$render = function () {
-                            _setColorRGB(_hexToRgb(ngModel.$viewValue));
-                        };
+                        ngModel.$render = _render;
                     };
 
                 _init();
