@@ -5,7 +5,7 @@ No jQuery or TinyColor dependencies.
 ![preview](https://raw.githubusercontent.com/zalari/md-color-slider/master/md-color-slider.png)
 
 ## Demo
-[Plunker](http://run.plnkr.co/UKGb9g2xz4vRiAiJ/)
+Try the Demo on [Plunker](http://run.plnkr.co/UKGb9g2xz4vRiAiJ/).
 
 ## Install
 <!--### NPM
@@ -37,15 +37,16 @@ angular.module('myApp', ['ngMaterial','ngAnimate', 'mdColorSlider']);
 
 Place the directive anywhere inside a ```md-input-container```:
 ````html
-<md-input-container class="md-color-slider-float">
+<md-input-container class="md-icon-float">
     <md-color-slider ng-model="[your model]"></md-color-slider>
 </md-input-container>
 ````
-Be sure to provide the css class ```md-color-slider-float``` or even ```md-icon-float``` to the ```md-input-container``` wrapper.
+When using labels be sure to provide the css class ```md-icon-float``` to the ```md-input-container``` wrapper.
 
 You can provide an classic input too:
 ````html
-<md-input-container>
+<md-input-container class="md-icon-float">
+    <label>I'm labeled!</label>
     <md-color-slider ng-model="[your model]"></md-color-slider>
     <input ng-model="[your model]">
 </md-input-container>
