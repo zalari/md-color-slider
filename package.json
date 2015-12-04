@@ -1,6 +1,6 @@
 {
     "name": "md-color-slider",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Simple Material design color slider for Angular.",
     "main": [
         "./dist/mdColorSlider.min.js",
